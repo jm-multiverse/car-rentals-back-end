@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 class WebServerConfiguration {
 
     // @Value("\${cors.originPatterns:default}")
-    private val corsOriginPatterns: String = "http://localhost:3000, https://car-rentals-front-end-a783ac6bc99b.herokuapp.com/"
+    private val corsOriginPatterns: String = "http://localhost:3000, https://car-rentals-front-end-a783ac6bc99b.herokuapp.com"
 
     @Bean
     fun addCorsConfig(): WebMvcConfigurer {
