@@ -1,5 +1,5 @@
 FROM openjdk:latest
-ENV JAR_NAME=app.jar
+ENV JAR_NAME=back-end-latest.jar
 ENV APP_HOME=/api
 WORKDIR $APP_HOME
 COPY --from=BUILD $APP_HOME .
