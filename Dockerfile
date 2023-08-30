@@ -1,9 +1,7 @@
-FROM eclipse-temurin:17-jdk-alpine
-
-ARG JAR_FILE=./build/libs/back-end-latest.jar
-
-COPY ${JAR_FILE} app.jar
-
-ENTRYPOINT ["java", "-jar", "app.jar"]
-
+FROM openjdk:latest
+ENV JAR_NAME=app.jar
+ENV APP_HOME=/api
+WORKDIR $APP_HOME
+COPY --from=BUILD $APP_HOME .
 EXPOSE 8080
+ENTRYPOINT exec java -jar $APP_HOME/build/libs/$JAR_NAME
