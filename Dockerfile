@@ -1,3 +1,10 @@
+# Build stage
+FROM gradle:latest AS BUILD
+WORKDIR /build
+COPY . .
+RUN gradle build
+
+# Package stage
 FROM openjdk:latest
 ENV JAR_NAME=back-end-latest.jar
 ENV APP_HOME=/api
